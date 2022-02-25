@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Info } from 'src/info';
 
 @Component({
@@ -6,7 +6,7 @@ import { Info } from 'src/info';
   templateUrl: './demo.component.html',
   styleUrls: ['./demo.component.css'],
 })
-export class DemoComponent implements OnInit {
+export class DemoComponent {
   info: Info[] = [
     {
       title: 'Iowa State Cyclones',
@@ -25,17 +25,14 @@ export class DemoComponent implements OnInit {
     },
   ];
 
-  headerVisible = true;
+  headerVisible: boolean = true;
   listVisible = true;
 
-  constructor() {}
-
-  hideInfo() {
+  hideInfo(): number {
     this.headerVisible = !this.headerVisible;
+    return 3;
   }
-  hideList() {
+  hideList(): void {
     this.listVisible = !this.listVisible;
   }
-
-  ngOnInit(): void {}
 }

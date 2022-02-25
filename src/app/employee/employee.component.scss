@@ -1,0 +1,39 @@
+.main {
+  background-color: whitesmoke;
+  height: 95vh;
+}
+
+.flex {
+  display: flex;
+  flex-direction: column;
+  width: 160px;
+  padding: 10px;
+}
+
+.put {
+  margin-top: 6px;
+  font-size: medium;
+}
+
+.btn {
+  margin-left: 10px;
+  width: 160px;
+  height: 30px;
+  margin-top: 10px;
+  font-size: small;
+  background-color: rgb(75, 240, 185);
+  border-radius: 4px;
+}
+
+.btn:hover {
+  cursor: pointer;
+  opacity: 90%;
+}
+
+.list {
+  list-style: none;
+}
+
+.rows {
+  font-size: large;
+}

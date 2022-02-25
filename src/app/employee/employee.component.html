@@ -1,0 +1,31 @@
+<div class="main">
+  <h1>LT Team</h1>
+  <div class="flex">
+    <input class="put" type="text" placeholder="Enter Name" #first />
+    <input class="put" type="text" placeholder="Enter Title" #job />
+  </div>
+  <button
+    class="btn"
+    data-testid="btn1"
+    (click)="addEmployee(first.value, job.value)"
+  >
+    Add New Employee
+  </button>
+  <br />
+  <button class="btn" data-testid="btn2" (click)="hideList()">Hide List</button>
+  <div>
+    <ul *ngIf="isVisible" class="list">
+      <li *ngFor="let item of employees; let i = index" class="rows">
+        ID: {{ item.id }} ~ Name: {{ item.name | uppercase }} ~ Title:
+        {{ item.title | uppercase }}
+        <button
+          class="btn"
+          data-testid="{{index.id`}}"
+          (click)="removeEmployee(item.id)"
+        >
+          Remove
+        </button>
+      </li>
+    </ul>
+  </div>
+</div>
