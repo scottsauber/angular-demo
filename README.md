@@ -3,7 +3,7 @@
 > CSS and styling does not matter here it at all, we are looking just for the functionality
 
 1. Create a new Angular component called demo
-1. Create a hardcoded array of 5 objects (you can create the interface/type to be whatever you want) in your component and display all 5 objects and all their properties by looping over them in the component’s HTML. You can use a table or a `ul`, whatever yu want.
+1. Create a hardcoded array of 5 objects (you can create the interface/type to be whatever you want) in your component and display all 5 objects and all their properties by looping over them in the component’s HTML. You can use a table or a `ul`, whatever you want.
 1. Create an input
 1. Allow searching with the input and search all of the properties you displayed in step 2
 1. Write tests for the functionality above
