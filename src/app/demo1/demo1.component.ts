@@ -44,11 +44,9 @@ export class Demo1Component {
 
   onSearchTextEntered(searchValue: string) {
     this.searchText = searchValue;
-    console.log(this.searchText);
   }
 
   removeRow(id: number) {
     this.list = this.list.filter((item) => item.id !== id);
-    console.log(`Remove list ID #${id}`);
   }
 }

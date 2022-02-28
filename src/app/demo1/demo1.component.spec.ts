@@ -193,7 +193,7 @@ describe('demo1 list', () => {
 
   describe('delete button', () => {
     const delBtn = async (listItem: string) => {
-      await render(Demo1Component);
+      await searchDemo();
       const deleteBtn = await screen.findByTestId('0');
       fireEvent.click(deleteBtn);
       const actual = screen.queryByText(listItem);
