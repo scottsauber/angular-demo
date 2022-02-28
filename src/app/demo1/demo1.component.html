@@ -1,0 +1,24 @@
+<app-search (searchTextChanged)="onSearchTextEntered($event)"></app-search>
+<ul>
+  <li *ngFor="let item of list">
+    <div
+      *ngIf="
+        searchText === '' ||
+        item.id.toString().toLowerCase().includes(searchText.toLowerCase()) ||
+        item.team.toLowerCase().includes(searchText.toLowerCase()) ||
+        item.sport.toLowerCase().includes(searchText.toLowerCase())
+      "
+    >
+      {{ item.id }}
+      {{ item.team }}
+      {{ item.sport }}
+      <button
+        class="btn"
+        [attr.data-testid]="item.id"
+        (click)="removeRow(item.id)"
+      >
+        Remove
+      </button>
+    </div>
+  </li>
+</ul>

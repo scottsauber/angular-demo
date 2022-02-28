@@ -203,8 +203,7 @@ describe('employee', () => {
 
   const testSix = async (listItem: string) => {
     await render(EmployeeComponent);
-    // const btnClick = await screen.findByTestId(`deleteBtn${0}`);
-    const btnClick = await screen.findByTestId('btn3');
+    const btnClick = await screen.findByTestId('0');
     fireEvent.click(btnClick);
     const actual = screen.queryByText(listItem);
     expect(actual).toBeFalsy();

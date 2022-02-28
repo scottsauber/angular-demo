@@ -20,7 +20,7 @@
         {{ item.title | uppercase }}
         <button
           class="btn"
-          data-testid="{{index.id`}}"
+          [attr.data-testid]="item.id"
           (click)="removeEmployee(item.id)"
         >
           Remove

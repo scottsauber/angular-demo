@@ -29,12 +29,6 @@ describe('demo', () => {
     expect(actual).toBeTruthy();
   };
 
-  //   async function testMe(listItem: string) {
-  //     await render(DemoComponent);
-  //     const actual = await screen.findByText(listItem);
-  //     expect(actual).toBeTruthy();
-  //   }
-
   it('should display Iowa State Cyclones', async () => {
     await testMe('Iowa State Cyclones');
   });
@@ -51,7 +45,33 @@ describe('demo', () => {
     await testMe('Green Bay Packers');
   });
 
-  async function testTwo(listItem: string) {
+  async function testOne(listItem: string) {
+    await render(DemoComponent);
+    const actual = await screen.findByText(listItem);
+    expect(actual).toBeTruthy();
+  }
+
+  it('should display Iowa State Cyclones', async () => {
+    await testOne('Iowa State Cyclones');
+  });
+
+  it('should display Iowa Hawkeyes', async () => {
+    await testOne('Iowa Hawkeyes');
+  });
+
+  it('should display Chicago Cubs', async () => {
+    await testOne('Chicago Cubs');
+  });
+
+  it('should display St. Louis Cardinals', async () => {
+    await testOne('St. Louis Cardinals');
+  });
+
+  it('should display Green Bay Packers', async () => {
+    await testOne('Green Bay Packers');
+  });
+
+  async function testOld(listItem: string) {
     await render(DemoComponent);
     const btnClick = await screen.findByTestId('btn1');
     fireEvent.click(btnClick);
@@ -59,32 +79,52 @@ describe('demo', () => {
     expect(actual).toBeFalsy();
   }
 
-  //   const testTwo = async (listItem: string) => {
-  //     await render(DemoComponent);
-  //     const btnClick = await screen.findByTestId('btn1');
-  //     fireEvent.click(btnClick);
-  //     const actual = screen.queryByText(listItem);
-  //     expect(actual).toBeFalsy();
-  //   };
-
   it('should not display Iowa State Cyclones', async () => {
-    await testTwo('Iowa State Cyclones');
+    await testOld('Iowa State Cyclones');
   });
 
   it('should not display Iowa Hawkeyes', async () => {
-    await testTwo('Iowa Hawkeyes');
+    await testOld('Iowa Hawkeyes');
   });
 
   it('should not display Chicago Cubs', async () => {
-    await testTwo('Chicago Cubs');
+    await testOld('Chicago Cubs');
   });
 
   it('should not display St. Louis Cardinals', async () => {
-    await testTwo('St. Louis Cardinals');
+    await testOld('St. Louis Cardinals');
   });
 
   it('should not display Green Bay Packers', async () => {
-    await testTwo('Green Bay Packers');
+    await testOld('Green Bay Packers');
+  });
+
+  const testNew = async (listItem: string) => {
+    await render(DemoComponent);
+    const btnClick = await screen.findByTestId('btn1');
+    fireEvent.click(btnClick);
+    const actual = screen.queryByText(listItem);
+    expect(actual).toBeFalsy();
+  };
+
+  it('should not display Iowa State Cyclones', async () => {
+    await testNew('Iowa State Cyclones');
+  });
+
+  it('should not display Iowa Hawkeyes', async () => {
+    await testNew('Iowa Hawkeyes');
+  });
+
+  it('should not display Chicago Cubs', async () => {
+    await testNew('Chicago Cubs');
+  });
+
+  it('should not display St. Louis Cardinals', async () => {
+    await testNew('St. Louis Cardinals');
+  });
+
+  it('should not display Green Bay Packers', async () => {
+    await testNew('Green Bay Packers');
   });
 });
 
