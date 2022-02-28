@@ -6,9 +6,17 @@ import { SearchComponent } from '../search/search.component';
 
 import { Demo1Component } from './demo1.component';
 
+let component: any;
+const searchDemo = async () => {
+  component = await render(Demo1Component, {
+    declarations: [SearchComponent],
+    imports: [FormsModule],
+  });
+};
+
 describe('demo1 list', () => {
   const testList = async (listItem: string) => {
-    await render(Demo1Component);
+    await searchDemo();
     const actual = await screen.findByText(listItem);
     expect(actual).toBeTruthy();
   };
@@ -38,7 +46,7 @@ describe('demo1 list', () => {
   });
 
   async function testList1(listItem: string) {
-    await render(Demo1Component);
+    await searchDemo();
     const actual = screen.getByText(listItem);
     expect(actual).toBeInTheDocument();
   }
@@ -72,7 +80,7 @@ describe('demo1 list', () => {
     listTeam: string,
     listSport: string
   ) => {
-    await render(Demo1Component);
+    await searchDemo();
     const actual = await screen.findByText(
       `${listId} ${listTeam} ${listSport}`
     );
@@ -103,7 +111,7 @@ describe('demo1 list', () => {
   });
 
   async function testToo(listId: number, listTeam: string, listSport: string) {
-    await render(Demo1Component);
+    await searchDemo();
     const actual = await screen.findByText(
       `${listId} ${listTeam} ${listSport}`
     );
@@ -134,14 +142,6 @@ describe('demo1 list', () => {
   });
 
   describe('search filter', () => {
-    let component: any;
-    const searchDemo = async () => {
-      component = await render(Demo1Component, {
-        declarations: [SearchComponent],
-        imports: [FormsModule],
-      });
-    };
-
     it('should not filter list when ID matches', async () => {
       await searchDemo();
       const inputBox = await screen.findByPlaceholderText('Search');
