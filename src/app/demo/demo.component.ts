@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Info } from 'src/info';
+import { Info } from 'src/models/info';
 
 @Component({
   selector: 'app-demo',

@@ -1,6 +1,5 @@
 import { FormsModule } from '@angular/forms';
 import { render, screen, fireEvent } from '@testing-library/angular';
-import { waitFor } from '@testing-library/dom';
 import userEvent from '@testing-library/user-event';
 import { SearchComponent } from '../search/search.component';
 

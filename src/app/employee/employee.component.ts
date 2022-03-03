@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Employee } from 'src/data';
+import { Employee } from 'src/models/data';
 
 @Component({
   selector: 'app-employee',
@@ -7,6 +7,8 @@ import { Employee } from 'src/data';
   styleUrls: ['./employee.component.scss'],
 })
 export class EmployeeComponent {
+  searchText: any;
+
   employees: Employee[] = [
     {
       id: 0,
@@ -27,6 +29,14 @@ export class EmployeeComponent {
 
   isVisible = true;
   counter = 3;
+
+  ngOnInit(): void {
+    this.logStuff();
+  }
+
+  logStuff() {
+    console.log(this.searchText);
+  }
 
   hideList() {
     this.isVisible = !this.isVisible;

@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { ListInfo } from 'src/listInfo';
+import { ListInfo } from 'src/models/listInfo';
 
 @Component({
   selector: 'app-demo1',
@@ -42,11 +42,13 @@ export class Demo1Component {
 
   searchText: string = '';
 
-  onSearchTextEntered(searchValue: string) {
+  onSearchTextEntered(searchValue: string): void {
     this.searchText = searchValue;
+    // console.log(this.searchText);
   }
 
-  removeRow(id: number) {
+  removeRow(id: number): void {
     this.list = this.list.filter((item) => item.id !== id);
+    // console.log(`Remove list ID #${id}`);
   }
 }
