@@ -18,7 +18,7 @@ export class BlogsComponent implements OnInit {
   }
 
   getAllBlogs() {
-    this.api.getBlogs().subscribe((blog) => {
+    this.api.getBlogs('').subscribe((blog) => {
       this.loadBlogs = blog;
     });
   }

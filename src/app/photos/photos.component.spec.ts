@@ -1,5 +1,4 @@
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
 import { render, screen } from '@testing-library/angular';
 import { of } from 'rxjs';
 import { Photo } from 'src/models/photo';
@@ -10,7 +9,7 @@ let component: any;
 const displayPhotos = async () => {
   component = await render(PhotosComponent, {
     declarations: [],
-    imports: [FormsModule, HttpClientModule],
+    imports: [HttpClientModule],
   });
 };
 

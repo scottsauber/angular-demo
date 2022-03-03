@@ -1,25 +1,34 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { HttpClientModule } from '@angular/common/http';
+import { render, screen } from '@testing-library/angular';
+import { of } from 'rxjs';
+import { Blog } from 'src/models/blog';
+import { BlogService } from '../services/blog.service';
 import { BlogsComponent } from './blogs.component';
 
-describe('BlogsComponent', () => {
-  let component: BlogsComponent;
-  let fixture: ComponentFixture<BlogsComponent>;
-
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ BlogsComponent ]
-    })
-    .compileComponents();
+let component: any;
+const displayBlogs = async () => {
+  component = await render(BlogsComponent, {
+    declarations: [],
+    imports: [HttpClientModule],
   });
+};
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(BlogsComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+describe('Blogs', () => {
+  const service = jest.spyOn(BlogService.prototype, 'getBlogs');
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  const blogs: Blog[] = [
+    {
+      userId: 1,
+      id: 1,
+      title: 'Another feather in your cap!',
+      body: 'quia et suscipit suscipit recusandae consequuntur expedita et cum reprehenderit molestiae ut ut quas totam nostrum rerum est autem sunt rem eveniet architecto',
+    },
+  ];
+
+  it('should display items of blogsService', async () => {
+    service.mockReturnValue(of(blogs));
+    await displayBlogs();
+    const actual = await screen.findByText('Another feather in your cap!');
+    expect(actual).toBeTruthy();
   });
 });

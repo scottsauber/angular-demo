@@ -11,7 +11,7 @@ export class BlogService {
 
   constructor(private http: HttpClient) {}
 
-  getBlogs(): Observable<Blog[]> {
-    return this.http.get<Blog[]>(this.url);
+  getBlogs(userId: string): Observable<Blog[]> {
+    return this.http.get<Blog[]>(this.url + userId);
   }
 }
