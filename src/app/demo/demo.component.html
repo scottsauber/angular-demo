@@ -1,0 +1,20 @@
+<div class="demo" *ngIf="headerVisible">
+  <h2>LT Angular Evaluation</h2>
+</div>
+<div class="demo">
+  <label for="check"> Click Checkbox</label>
+  <input type="checkbox" data-testid="toggle" (click)="hideInfo()" />
+  <ul *ngIf="listVisible">
+    <li *ngFor="let item of info">
+      {{ item.title }}
+    </li>
+  </ul>
+  <button
+    type="button"
+    class="btn btn-warning"
+    (click)="hideList()"
+    data-testid="btn1"
+  >
+    Hide 5 Strings
+  </button>
+</div>

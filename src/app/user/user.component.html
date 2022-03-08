@@ -1,0 +1,34 @@
+<table class="table center table-striped table-hover table-bordered">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Username</th>
+      <th>Email</th>
+      <th>Address</th>
+      <th>Phone</th>
+      <th>Website</th>
+      <th>Company</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of loadUsers">
+      <td>{{ item.id }}</td>
+      <td>{{ item.name }}</td>
+      <td>{{ item.username }}</td>
+      <td>{{ item.email }}</td>
+      <td>
+        {{ item.address.street }} {{ item.address.suite }}
+        {{ item.address.city }} {{ item.address.street }}
+        {{ item.address.zipcode }} {{ item.address.geo.lat }}
+        {{ item.address.geo.lng }}
+      </td>
+      <td>{{ item.phone }}</td>
+      <td>{{ item.website }}</td>
+      <td>
+        {{ item.company.name }} {{ item.company.catchPhrase }}
+        {{ item.company.bs }}
+      </td>
+    </tr>
+  </tbody>
+</table>

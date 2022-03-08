@@ -1,0 +1,68 @@
+<div class="main">
+  <div class="container">
+    <div class="row">
+      <input
+        type="text"
+        name="search"
+        [(ngModel)]="searchText"
+        placeholder="Search"
+      />
+    </div>
+  </div>
+  <table *ngIf="isVisible" class="table table-striped">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Title</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of employees | filter: searchText">
+        <td>{{ item.id }}</td>
+        <td>{{ item.name }}</td>
+        <td>{{ item.title }}</td>
+        <td>
+          <button
+            class="btn btn-primary"
+            [attr.data-testid]="item.id"
+            (click)="removeEmployee(item.id)"
+          >
+            Remove
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="flex">
+    <input type="text" placeholder="Enter Name" #first />
+    <input type="text" placeholder="Enter Title" #job />
+    <button
+      class="btn1"
+      data-testid="btn1"
+      (click)="addEmployee(first.value, job.value)"
+    >
+      Add New Employee
+    </button>
+    <button class="btn1" data-testid="btn2" (click)="hideList()">
+      Hide List
+    </button>
+  </div>
+
+  <div class="listInfo">
+    <ul *ngIf="isVisible">
+      <li *ngFor="let item of employees">
+        ID: {{ item.id }} ~ Name: {{ item.name | uppercase }} ~ Title:
+        {{ item.title | uppercase }}
+        <button
+          class="btn2"
+          [attr.data-testid]="item.id"
+          (click)="removeEmployee(item.id)"
+        >
+          Remove
+        </button>
+      </li>
+    </ul>
+  </div>
+</div>

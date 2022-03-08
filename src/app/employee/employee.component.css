@@ -1,0 +1,71 @@
+.main {
+  background-color: whitesmoke;
+  height: 95vh;
+  text-align: center;
+}
+
+.row {
+  padding: 4px;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+
+h1 {
+  text-align: center;
+  padding: 5px;
+  margin: auto;
+}
+
+.flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: auto;
+}
+
+input {
+  font-weight: bold;
+}
+
+.btn1 {
+  width: 175px;
+  height: 40px;
+  margin-top: 10px;
+  font-size: medium;
+  background-color: rgb(75, 240, 185);
+  border-radius: 4px;
+  text-align: center;
+}
+
+.btn1:hover {
+  cursor: pointer;
+  opacity: 90%;
+}
+
+.listInfo {
+  margin: auto;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  font-size: large;
+}
+
+.btn2 {
+  width: 175px;
+  height: 30px;
+  margin-top: 2px;
+  font-size: medium;
+  background-color: rgb(75, 240, 185);
+  border-radius: 4px;
+  text-align: center;
+  margin-left: 2px;
+}
+
+ul {
+  list-style: none;
+  align-items: center;
+}
