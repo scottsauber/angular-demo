@@ -5,6 +5,7 @@
 1. Create a new component
 1. Add inputs for first name, middle name, last name with a button
 1. Make first name and last name required but middle name is not
+1. On submit displays a success messages if it passes validation
 1. Write tests for the above
 1. Bonus: only allow a max length of 100 for these 3
 1. Bonus: add a checkbox that says "No middle name" and that hides the middle name input
