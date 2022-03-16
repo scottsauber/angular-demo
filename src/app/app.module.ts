@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing-module';
 
@@ -18,15 +18,33 @@ import { PhotoComponent } from './photo/photo.component';
 import { SearchComponent } from './search/search.component';
 import { UserComponent } from './user/user.component';
 import { TodoComponent } from './todo/todo.component';
+import { ContactFormComponent } from './contact-form/contact-form.component';
+import { SearchFilterPipe } from './employee/search.pipe';
+import { FormsComponent } from './forms/forms.component';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, EmployeeComponent, DemoComponent, Demo1Component, BlogComponent, PhotoComponent, SearchComponent, UserComponent, TodoComponent],
+  declarations: [
+    AppComponent,
+    HeaderComponent,
+    EmployeeComponent,
+    DemoComponent,
+    Demo1Component,
+    BlogComponent,
+    PhotoComponent,
+    SearchComponent,
+    UserComponent,
+    TodoComponent,
+    ContactFormComponent,
+    SearchFilterPipe,
+    FormsComponent,
+  ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
     HttpClientModule,
     Ng2SearchPipeModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

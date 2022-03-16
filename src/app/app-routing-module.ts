@@ -9,6 +9,8 @@ import { BlogComponent } from './blog/blog.component';
 import { PhotoComponent } from './photo/photo.component';
 import { UserComponent } from './user/user.component';
 import { TodoComponent } from './todo/todo.component';
+import { ContactFormComponent } from './contact-form/contact-form.component';
+import { FormsComponent } from './forms/forms.component';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/employee', pathMatch: 'full' },
@@ -19,6 +21,8 @@ const appRoutes: Routes = [
   { path: 'blogs', component: BlogComponent },
   { path: 'todos', component: TodoComponent },
   { path: 'users', component: UserComponent },
+  { path: 'contact', component: ContactFormComponent },
+  { path: 'forms', component: FormsComponent },
 ];
 
 @NgModule({

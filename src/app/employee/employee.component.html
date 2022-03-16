@@ -19,7 +19,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let item of employees | filter: searchText">
+      <tr *ngFor="let item of employees | searchFilter: searchText">
         <td>{{ item.id }}</td>
         <td>{{ item.name }}</td>
         <td>{{ item.title }}</td>

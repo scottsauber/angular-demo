@@ -1,13 +1,24 @@
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
 import { render, screen, fireEvent } from '@testing-library/angular';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { AppRoutingModule } from '../app-routing-module';
 
 import { EmployeeComponent } from './employee.component';
+import { SearchFilterPipe } from './search.pipe';
 
 let component: any;
 const searchEmployee = async () => {
   component = await render(EmployeeComponent, {
-    declarations: [],
-    imports: [Ng2SearchPipeModule],
+    declarations: [SearchFilterPipe],
+    imports: [
+      BrowserModule,
+      FormsModule,
+      AppRoutingModule,
+      HttpClientModule,
+      Ng2SearchPipeModule,
+    ],
   });
 };
 

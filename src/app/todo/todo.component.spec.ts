@@ -29,7 +29,13 @@ describe('Todo', () => {
   it('should display items of TodoService', async () => {
     service.mockReturnValue(of(todos));
     await displayBlogs();
+    const userId = await screen.findAllByText('1');
+    expect(userId).toBeTruthy();
+    const id = await screen.findAllByText('1');
+    expect(id).toBeTruthy();
     const actual = await screen.findByText('delectus aut autem');
     expect(actual).toBeTruthy();
+    const completed = await screen.findByText('false');
+    expect(completed).toBeTruthy();
   });
 });
